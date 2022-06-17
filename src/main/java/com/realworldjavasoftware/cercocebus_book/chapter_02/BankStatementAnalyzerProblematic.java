@@ -16,6 +16,7 @@ public class BankStatementAnalyzerProblematic {
         "dd-MM-yyyy");
 
     public static void main(String[] args) throws IOException {
+
         final Path path = Paths.get(RESOURCES + "bank-data-simple.csv");
         final List<String> lines = Files.readAllLines(path);
         double total = 0d;

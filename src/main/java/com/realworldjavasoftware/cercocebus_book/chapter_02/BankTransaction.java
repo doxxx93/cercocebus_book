@@ -37,15 +37,15 @@ public final class BankTransaction {
             that.date) && Objects.equals(description, that.description);
     }
 
-    public LocalDate date() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public double amount() {
+    public double getAmount() {
         return amount;
     }
 
-    public String description() {
+    public String getDescription() {
         return description;
     }
 
@@ -53,6 +53,4 @@ public final class BankTransaction {
     public int hashCode() {
         return Objects.hash(date, amount, description);
     }
-
-
 }
