@@ -34,4 +34,6 @@
   - 5장: TDD
   - 6장: 목, 스텁 등 테스트 더블
 
-## Chapter 2. 입출금 내역 분석기
+## [Chapter 2. 입출금 내역 분석기](https://github.com/doxxx93/cercocebus_book/blob/master/src/main/java/com/realworldjavasoftware/cercocebus_book/chapter_02/README.md)
+
+## [Chapter 3. 입출금 내역 분석기 확장판](https://github.com/doxxx93/cercocebus_book/blob/master/src/main/java/com/realworldjavasoftware/cercocebus_book/chapter_03/README.md)
