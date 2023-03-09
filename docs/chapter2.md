@@ -61,3 +61,9 @@
 - 한 클래스는 한 기능만 책임진다.
 - 클래스가 바뀌어야 하는 이유는 오직 하나뿐이어야 한다.
 
+[BankStatementCSVParser.java](../src/main/java/chap_02/BankStatementCSVParser.java)는 CSV 파싱 로직을 분리한 클래스이다.
+
+[BankTransaction.java](../src/main/java/chap_02/BankTransaction.java)는 입출금 내역을 담는 도메인 클래스이다.
+
+[BankStatementAnalyzerSRP.java](../src/main/java/chap_02/BankStatementAnalyzerSRP.java)에서 확인할 수 있다. 
+
