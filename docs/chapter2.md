@@ -19,7 +19,8 @@
 
 한 개의 클래스로 구현한다.
 
-[BankTransactionAnalyzerSimple](../src/main/java/chap_02/BankTransactionAnalyzerSimple.java)클래스는 어떤 동작을 수행할까?
+[BankTransactionAnalyzerSimple](../src/main/java/chap_02/BankTransactionAnalyzerSimple.java)클래스는 어떤
+동작을 수행할까?
 
 - 콤마로 열 분리
 - 금액 추출
@@ -32,3 +33,10 @@
 - 행의 데이터가 완벽하지 않다면?
 
 > 3장에서 예외 처리에 대해 더 자세히 다룬다.
+
+[BankStatementAnalyzerProblematic](../src/main/java/chap_02/BankStatementAnalyzerProblematic.java)
+클래스는 주어진 월을 선택할 수 있도록 로직을 바꾸었다.
+
+### final 변수
+
+가능한 많은 변수를 final로 표시하면 어떤 객체의 상태가 바뀔 수 있고, 어떤 객체의 상태가 바뀔 수 없는지 명확하게 알 수 있다.
