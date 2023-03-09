@@ -97,3 +97,15 @@ KISS, DRY, SRP 원칙을 배웠다.
 
 일반적으로 클래스나 메서드 파라미터의 여러 필드를 바꾸는 `if/else` 블록이 여러 개 포함되어 있다면, 메서드의 응집도가 낮다고 볼 수 있다.
 
+## 결합도
+
+결합도는 한 기능이 다른 클래스에 얼마나 의존하고 있는지를 가늠한다. 코드가 서로 어떻게 의존하는지와 관련이 있는 척도이다.
+
+[BankStatementParser.java](../src/main/java/chap_02/BankStatementParser.java)는 파서 인터페이스이다.
+
+[BankStatementCSVParser.java](../src/main/java/chap_02/BankStatementCSVParser.java)는 파서 인터페이스를 구현한다.
+
+[BankStatementAnalyzer.java](../src/main/java/chap_02/BankStatementAnalyzer.java)에서 특정 파서 구현의 결합을 제거하기
+위하여, `BankTransactionParser`를 인수로 받는 `analyze()`메서드를 추가하고, 특정 구현에 종속되지 않도록 개선한다.
+
+코드의 다양한 컴포넌트가 내부와 세부 구현에 의존하지 않도록 한다.

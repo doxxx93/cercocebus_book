@@ -9,11 +9,12 @@ import java.util.List;
 /**
  * CSV 파싱 로직을 분리한 클래스
  */
-public class BankStatementCSVParser {
+public class BankStatementCSVParser implements BankStatementParser {
 
     private static final DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    private BankTransaction parseFromCSV(final String line) {
+    @Override
+    public BankTransaction parseFrom(final String line) {
         final String[] columns = line.split(",");
 
         final LocalDate date = LocalDate.parse(columns[0], DATE_PATTERN);
@@ -22,7 +23,8 @@ public class BankStatementCSVParser {
         return new BankTransaction(date, amount, columns[2]);
     }
 
-    public List<BankTransaction> parseLinesFromCSV(final List<String> lines) {
-        return lines.stream().map(this::parseFromCSV).collect(toList());
+    @Override
+    public List<BankTransaction> parseLinesFrom(final List<String> lines) {
+        return lines.stream().map(this::parseFrom).collect(toList());
     }
 }
