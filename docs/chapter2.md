@@ -65,5 +65,35 @@
 
 [BankTransaction.java](../src/main/java/chap_02/BankTransaction.java)는 입출금 내역을 담는 도메인 클래스이다.
 
-[BankStatementAnalyzerSRP.java](../src/main/java/chap_02/BankStatementAnalyzerSRP.java)에서 확인할 수 있다. 
+[BankStatementAnalyzerSRP.java](../src/main/java/chap_02/BankStatementAnalyzerSRP.java)에서 확인할 수 있다.
+
+## 응집도
+
+KISS, DRY, SRP 원칙을 배웠다.
+
+코드 품질과 관련한 특징인 응집도에 대해 알아보자.
+
+응집도는 서로 어떻게 관련되어 있는지를 가리킨다. 응집도는 클래스나 메서드의 책임이 서로 얼마나 강하게 연결되어 있는지를 측정한다.
+
+현재 BankStatementAnalyzerSRP 클래스는 파서, 계산, 화면으로 결과 전송 등 다양한 부분을 연결하고 있다.
+
+하지만 계산 작업을 하는 로직은 정적 메서드로 선언되어 있다. 이는 응집도가 낮다는 것을 의미한다.
+
+[BankStatementProcessor.java](../src/main/java/chap_02/BankStatementProcessor.java)는 계산 로직을 분리한 클래스이다.
+
+### 클래스 수준 응집도
+
+실무에서는 다음과 같은 여섯 가지 방법으로 그룹화한다.
+
+1. 기능: `BankStatementCSVParser`를 구현할 때 기능이 비슷한 메서드를 그룹화했다.
+2. 정보: 같은 데이터나 도메인 객체를 처리하는 메서드를 그룹화하는 방법도 있다. `BankTransaction` 객체를 CRUD하는 기능을 제공하는 클래스를 만들 수 있다.
+   - `BankTransactionDAO`
+3. 유틸리티: 관련성이 없는 메서드를 한 클래스로 포함한다. 
+4. 논리: 같은 논리를 수행하는 메서드를 그룹화한다. SRP를 위배하는 경우가 발생할 수 있다.
+5. 순차: 여러 동작이 어떻게 함께 수행되는지 쉽게 이해할 수 있지만, 한 클래스를 바꿔야할 여러 이유가 존재하게 된다.
+6. 시간: 초기화, 종료 작업을 수행하는 메서드를 그룹화한다.
+
+### 메서드 수준 응집도
+
+일반적으로 클래스나 메서드 파라미터의 여러 필드를 바꾸는 `if/else` 블록이 여러 개 포함되어 있다면, 메서드의 응집도가 낮다고 볼 수 있다.
 
