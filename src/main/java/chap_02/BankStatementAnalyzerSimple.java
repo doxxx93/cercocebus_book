@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class BankTransactionAnalyzerSimple {
+public class BankStatementAnalyzerSimple {
     private static final String RESOURCES = "src/main/resources/";
 
     public static void main(String[] args) throws IOException {
